@@ -97,26 +97,114 @@
             <div class="row p-2 shadow-lg">
                 <h3>CADASTRAR:</h3>
                 <form class="row g-3">
-                    <div class="col-md-4">
-                      <label for="validationDefault01" class="form-label">Nome Completo</label>
-                      <input type="text" class="form-control" id="validationDefault01" placeholder="Nome" required>
+                    <!--Nome Completo-->
+                    <div class="col-md-6">
+                        <label for="validationDefault01" class="form-label">Nome Completo</label>
+                        <input type="text" class="form-control" id="validationDefault01" placeholder="Nome" required>
                     </div>
-                    <div class="col-md-4">
-                      <label for="validationDefault02" class="form-label">CPF</label>
-                      <input type="number" minlength="11" maxlength="11" class="form-control" id="validationDefault02" value="Otto" required>
+                    <!--Telefone Celular-->
+                    <div class="col-md-6">
+                        <label for="validationDefault02" class="form-label">Celular</label>
+                        <input type="tel" minlength="10" maxlength="12" class="form-control" id="validationDefault02"
+                            placeholder="() _____-____" required>
                     </div>
+                    <!--Email-->
+                    <div class="col-md-6">
+                        <label for="validationDefault02" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="validationDefault02"
+                            placeholder="usuario@gmail.com" required>
+                    </div>
+                    <!--Senha-->
+                    <div class="col-md-6">
+                        <label for="validationDefault02" class="form-label">Senha</label>
+                        <input type="password" minlength="5" maxlength="20" class="form-control" id="validationDefault02"
+                            placeholder="************" required>
+                    </div>
+                    <!--Endereço-->
+                    <div class="col-md-6">
+                        <label for="validationDefault02" class="form-label">CEP</label>
+                        <input type="number" minlength="8" maxlength="8" class="form-control" id="validationDefault02"
+                            placeholder="_____-___" required>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="validationDefault02" class="form-label">Número</label>
+                        <input type="number" maxlength="4" class="form-control" id="validationDefault02"
+                            placeholder="N° casa/apartamento" required>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="validationDefault02" class="form-label">Complemento</label>
+                        <input type="text" class="form-control" id="validationDefault02"
+                            placeholder="Complemento" required>
+                    </div>
+                    <!--Termos e Condições-->
                     <div class="col-12">
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
-                        <label class="form-check-label" for="invalidCheck2">
-                          Agree to terms and conditions
-                        </label>
-                      </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+                            <label class="form-check-label" for="invalidCheck2">
+                                Concordo com os
+                                <!--Ativa o modal ao ser clicado-->
+                                <a class="link-offset-1" data-bs-toggle="modal" data-bs-target="#Modal">Termos e
+                                    Condições</a>
+                            </label>
+                        </div>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="Modal" tabindex="-1" aria-labelledby="ModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-scrollable">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="ModalLabel">Termos e Condições</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum tempora
+                                            minus dolore
+                                            rerum, impedit corporis eveniet aspernatur reprehenderit velit aperiam quasi
+                                            unde.
+                                            Quibusdam repellat nobis consequatur nisi veritatis, consequuntur, illo in
+                                            ea fuga
+                                            cupiditate id voluptas. Vitae suscipit modi itaque laborum perferendis
+                                            incidunt
+                                            dolorem tenetur, possimus nobis quae animi! Possimus vel quod dolore
+                                            repellat eius
+                                            eveniet ea, rerum delectus ipsum, vero labore accusantium debitis nulla
+                                            voluptatibus
+                                            est. Asperiores quas quam suscipit ut dolorum recusandae reiciendis ipsum
+                                            enim eius
+                                            est laudantium dignissimos cum, hic molestias consectetur error nobis nisi
+                                            aut
+                                            cumque iure officiis optio quae! Debitis error maxime similique rerum magnam
+                                            consequuntur et explicabo recusandae aliquid maiores eos quae voluptatum
+                                            eligendi
+                                            quo iste, temporibus officiis! Laborum neque velit molestiae quia, commodi
+                                            alias.
+                                            Itaque voluptas illum sit quae deserunt sint voluptatum distinctio eaque vel
+                                            iusto,
+                                            quibusdam sequi quas aliquam adipisci iure ducimus obcaecati aspernatur
+                                            perferendis
+                                            est quos vero incidunt modi consequatur? Velit nulla, ratione voluptates
+                                            dolor,
+                                            libero adipisci autem architecto culpa, placeat totam facere nobis! Porro
+                                            ducimus
+                                            veritatis animi aliquam perspiciatis! Expedita beatae perspiciatis neque
+                                            veritatis,
+                                            deleniti distinctio laborum culpa vero molestias voluptate voluptatum.
+                                            Molestiae,
+                                            sint veniam dolores natus accusamus atque, ipsam ipsa quia cum fuga quod
+                                            dolorem id
+                                            sunt saepe fugiat.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+                    <!--Botão para Cadastrar-->
                     <div class="col-12">
-                      <button class="btn btn-primary" type="submit">Submit form</button>
+                        <button class="btn btn-success" type="submit">Cadastrar</button>
                     </div>
-                  </form>
+                </form>
             </div>
         </div>
     </main>
