@@ -9,6 +9,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
+        <script src="cadastro.js"></script>
     <title>Cadastro</title>
 </head>
 
@@ -100,46 +101,36 @@
                     <!--Nome Completo-->
                     <div class="col-md-6">
                         <label for="validationDefault01" class="form-label">Nome Completo</label>
-                        <input type="text" class="form-control" id="validationDefault01" placeholder="Nome" required>
-                    </div>
+                        <input type="text" class="form-control" id="nome" placeholder="Nome" required>
+                    </div>                    
                     <!--Telefone Celular-->
                     <div class="col-md-6">
                         <label for="validationDefault02" class="form-label">Celular</label>
-                        <input type="tel" minlength="10" maxlength="12" class="form-control" id="validationDefault02"
+                        <input type="tel" minlength="10" maxlength="14" class="form-control" id="celular"
                             placeholder="() _____-____" required>
                     </div>
                     <!--Email-->
                     <div class="col-md-6">
                         <label for="validationDefault02" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="validationDefault02"
+                        <input type="email" class="form-control" id="email"
                             placeholder="usuario@gmail.com" required>
                     </div>
                     <!--Senha-->
                     <div class="col-md-6">
                         <label for="validationDefault02" class="form-label">Senha</label>
-                        <input type="password" minlength="5" maxlength="20" class="form-control" id="validationDefault02"
+                        <input type="password" minlength="5" maxlength="20" class="form-control" id="senha"
                             placeholder="************" required>
                     </div>
                     <!--Endereço-->
-                    <div class="col-md-6">
-                        <label for="validationDefault02" class="form-label">CEP</label>
-                        <input type="number" minlength="8" maxlength="8" class="form-control" id="validationDefault02"
-                            placeholder="_____-___" required>
-                    </div>
-                    <div class="col-md-3">
-                        <label for="validationDefault02" class="form-label">Número</label>
-                        <input type="number" maxlength="4" class="form-control" id="validationDefault02"
-                            placeholder="N° casa/apartamento" required>
-                    </div>
-                    <div class="col-md-3">
-                        <label for="validationDefault02" class="form-label">Complemento</label>
-                        <input type="text" class="form-control" id="validationDefault02"
-                            placeholder="Complemento" required>
+                    <div class="col-md-12">
+                        <label for="validationDefault02" class="form-label">Endereço</label>
+                        <input type="text" minlength="10" class="form-control" id="endereco"
+                            placeholder="Rua, numero/complemento, bairro" required>
                     </div>
                     <!--Termos e Condições-->
                     <div class="col-12">
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+                            <input class="form-check-input" type="checkbox" value="" id="termos" required>
                             <label class="form-check-label" for="invalidCheck2">
                                 Concordo com os
                                 <!--Ativa o modal ao ser clicado-->
@@ -202,7 +193,7 @@
                     </div>
                     <!--Botão para Cadastrar-->
                     <div class="col-12">
-                        <button class="btn btn-success" type="submit">Cadastrar</button>
+                        <button class="btn btn-success" type="submit" id="btnCadastrar">Cadastrar</button>
                     </div>
                 </form>
             </div>
