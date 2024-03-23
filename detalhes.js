@@ -1,3 +1,14 @@
+// Função para verificar se o usuário está logado
+function verificarUsuarioLogado() {
+  const usuarioLogado = localStorage.getItem('usuarioLogado');
+
+  if (usuarioLogado) {
+      return true;
+  } else {
+      return false;
+  }
+}
+
 
 function Mostrar(data){
     var url = window.location.href;
