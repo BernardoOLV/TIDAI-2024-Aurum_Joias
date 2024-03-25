@@ -54,7 +54,7 @@ function Mostrar(data){
       <div class="col-md-4 shadow-lg">
         <h2>${produto.Nome}</h2>
         <h1 style="color: green;">R$ ${produto.Preco}</h1>
-        <button class="btn btn-success" type="submit">Adicionar ao carrinho
+        <button class="btn btn-success" type="button">Adicionar ao carrinho
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-check"
             viewBox="0 0 16 16">
             <path
