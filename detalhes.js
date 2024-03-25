@@ -3,26 +3,26 @@ function verificarUsuarioLogado() {
   const usuarioLogado = localStorage.getItem('usuarioLogado');
 
   if (usuarioLogado) {
-      return true;
+    return true;
   } else {
-      return false;
+    return false;
   }
 }
 
 
-function Mostrar(data){
-    var url = window.location.href;
-    var parametroId = new URLSearchParams(new URL(url).search).get("id");
-    var principal = document.getElementById("main");
+function Mostrar(data) {
+  var url = window.location.href;
+  var parametroId = new URLSearchParams(new URL(url).search).get("id");
+  var principal = document.getElementById("main");
 
-    if (parametroId !== null) {
-        console.log("ID encontrado na URL:", parametroId);
-    } else {
-        console.log("Nenhum ID encontrado na URL.");
-    }
-    produto = data.Produto[parametroId];
-    /*
-    principal.innerHTML = `
+  if (parametroId !== null) {
+    console.log("ID encontrado na URL:", parametroId);
+  } else {
+    console.log("Nenhum ID encontrado na URL.");
+  }
+  produto = data.Produtos[parametroId];
+
+  principal.innerHTML = `
     <div class="container p-4">
     <div class="row p-2">
       <div class="col-md-8">
@@ -54,7 +54,7 @@ function Mostrar(data){
       <div class="col-md-4 shadow-lg">
         <h2>${produto.Nome}</h2>
         <h1 style="color: green;">R$ ${produto.Preco}</h1>
-        <button class="btn btn-success" type="button">Adicionar ao carrinho
+        <button class="btn btn-success" type="button" onclick="adicionarCarrinho('${parametroId}')">Adicionar ao carrinho
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-check"
             viewBox="0 0 16 16">
             <path
@@ -70,21 +70,94 @@ function Mostrar(data){
       <h3>DETALHES DO PRODUTO:</h3>
       <p>${produto.Detalhes}</p>
     </div>
-  </div>`*/
+  </div>`
 }
 
-window.onload = function(){
-    fetch("https://aurum-joias-default-rtdb.firebaseio.com/.json")
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error("Ocorreu um erro ao fazer a requisição.");
-                }
-                return response.json();
-            })
-            .then(data => {
-                Mostrar(data);
-            })
-            .catch(error => {
-                console.error(error);
-            });
+function adicionarCarrinho(produtoID) {
+  // Verifica se o usuário está logado
+  if (!verificarUsuarioLogado()) {
+    window.location.href = 'login.html';
+    return;
+  }
+
+  // Faz uma solicitação GET para obter os dados dos usuários
+  fetch('https://aurum-joias-default-rtdb.firebaseio.com/.json')
+    .then(response => {
+      if (!response.ok) {
+        throw new Error("Ocorreu um erro ao fazer a requisição.");
+      }
+      return response.json();
+    })
+    .then(data => {
+      // Pegar o ID do usuario atual
+      const email = localStorage.getItem('email');
+      const userID = Object.keys(data.Usuarios).find(key => data.Usuarios[key].Email === email);
+
+      if (!userID) {
+        throw new Error('ID do usuário não encontrado.');
+      }
+
+      // Pega o produto novamente
+      const produto = data.Produtos[produtoID];
+      if (!produto) {
+        throw new Error('Produto não encontrado.');
+      }
+
+      // Dados do produto a serem adicionados ao carrinho
+      const produtoParaAdicionar = {
+        Nome: produto.Nome,
+        Preco: produto.Preco,
+        Detalhes: produto.Detalhes
+      };
+
+      // URL da API para adicionar o produto ao carrinho do usuário
+      const urlCarrinho = `https://aurum-joias-default-rtdb.firebaseio.com/Usuarios/${userID}/Carrinho/.json`;
+
+      // Configura as opções para a solicitação POST
+      const options = {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(produtoParaAdicionar)
+      };
+
+      // Envia a solicitação POST para adicionar o produto ao carrinho
+      fetch(urlCarrinho, options)
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Erro ao adicionar produto ao carrinho.');
+          }
+          return response.json(); 
+        })
+        .then(data => {
+          console.log('Produto adicionado ao carrinho:', data);
+          window.location.href = 'carrinho.html';
+        })
+        .catch(error => {
+          console.error('Erro ao adicionar produto ao carrinho:', error);
+        });
+    })
+    .catch(error => {
+      console.error(error);
+    });
+}
+
+
+
+
+window.onload = function () {
+  fetch("https://aurum-joias-default-rtdb.firebaseio.com/.json")
+    .then(response => {
+      if (!response.ok) {
+        throw new Error("Ocorreu um erro ao fazer a requisição.");
+      }
+      return response.json();
+    })
+    .then(data => {
+      Mostrar(data);
+    })
+    .catch(error => {
+      console.error(error);
+    });
 }
