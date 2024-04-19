@@ -22,14 +22,15 @@ function verificarUsuarioLogado() {
       console.log("Nenhuma categoria encontrada na URL.");
     }
 
-    //TERMINAR DEPOIS; ID PRECISA DE CORREÇÃO;
+ 
     conteudo += `<div class="container">`;
     //Mostrar produtos que tiverem a catégoria
     data.Produtos.forEach(element => {
         if(element.Categoria == parametro){
+          let produtoID = Object.keys(data.Produtos).find(key => data.Produtos[key].Nome === element.Nome);
           conteudo += `
-            <a href="detalhes.html?id=${element.id}">
-              <div class="col-md-4">
+            <a href="detalhes.html?id=${produtoID}">
+              <div class="col-md-4 card">
                 <div class="row">
                   ${element.Imagem}
                 <\div>
