@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
   <meta charset="UTF-8">
@@ -9,7 +9,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="/CSS/style.css">
+  <link rel="stylesheet" href="/CSS/style.css">
   <title>Homepage</title>
 </head>
 
@@ -38,7 +38,7 @@
                 class="bi bi-person-fill" viewBox="0 0 16 16">
                 <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
               </svg>
-              entrar            
+              entrar
             </a>
           </div>
           <div class="col-1 pt-3">
@@ -72,13 +72,16 @@
           <div class="offcanvas-header">
             <h5 class="offcanvas-title" id="offcanvasNavbarLabel">AURUM JOIAS</h5>
             <a class="nav-link ps-3" href="login.html">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
-                <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                class="bi bi-person-fill" viewBox="0 0 16 16">
+                <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
               </svg>
             </a>
             <a class="nav-link ps-3" href="carrinho.html">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
-                <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-cart"
+                viewBox="0 0 16 16">
+                <path
+                  d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
               </svg>
             </a>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -119,19 +122,115 @@
   </header>
 
   <main>
-
-    <!--ZUEIRA INICIO APAGAR DPS-->
-    <div class="container p-4">
-      <div class="row">
-        <video src="/Wham! ~ Careless Whisper -- Deadpool.mp4" autoplay muted controls></video>
+    <div class="row mt-3">
+      <div id="carousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="/PICTURES/sem_imagem.webp" class="d-block w-100" alt="promocoes">
+          </div>
+          <div class="carousel-item">
+            <img src="/PICTURES/sem_imagem.webp" class="d-block w-100" alt="promocoes">
+          </div>
+          <div class="carousel-item">
+            <img src="/PICTURES/sem_imagem.webp" class="d-block w-100" alt="promocoes">
+          </div>
+        </div>
       </div>
     </div>
 
-    <!--
-    <audio autoplay>
-      <source src="Wham! ~ Careless Whisper -- Deadpool.mp4" type="audio/mpeg">
-    </audio>-->
-    <!--ZUERIA FIM-->
+    <div class="container p-4">
+      <div class="row">
+        <div class="col-md-6 p-4">
+          <a href="/HTML/produtos.html?category=colares">
+            <div class="card text-bg-dark" id="home_filtro">
+              <img src="/PICTURES/sem_imagem.webp" class="card-img" alt="...">
+              <div class="card-img-overlay">
+                <h5 class="card-title">Colares</h5>
+                <p class="card-text">Os nossos colares são da melhor qualidade e são aprovados por diversos joalheiros
+                  de
+                  nome. Procure pelo colar que melhor combina com seu corpo!</p>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-md-6 p-4">
+          <a href="/HTML/produtos.html?category=aneis"></a>
+          <div class="card text-bg-dark" id="home_filtro">
+            <img src="/PICTURES/sem_imagem.webp" class="card-img" alt="...">
+            <div class="card-img-overlay">
+              <h5 class="card-title">Anéis</h5>
+              <p class="card-text">Nossos anéis são feitos para todos os tipos de dedo. E o seu dedo ou de seu
+                parceiro(a) é nossa prioridade. Seu conforto e brilho será reconhcido a quilometros!</p>
+            </div>
+          </div></a>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6 p-4">
+          <a href="/HTML/produtos.html?category=pulseiras">
+            <div class="card text-bg-dark" id="home_filtro">
+              <img src="/PICTURES/sem_imagem.webp" class="card-img" alt="...">
+              <div class="card-img-overlay">
+                <h5 class="card-title">Pulseiras</h5>
+                <p class="card-text">Por que só pensar em relógios, se você pode encontrar uma pulseira muito mais
+                  chamativa e brilhante? Uma que realmente combine com seu braço e faça com que ele sim seja respeitado,
+                  até mais que tatuagem!</p>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-md-6 p-4">
+          <a href="/HTML/produtos.html?category=pulseiras">
+            <div class="card text-bg-dark" id="home_filtro">
+              <img src="/PICTURES/sem_imagem.webp" class="card-img" alt="...">
+              <div class="card-img-overlay">
+                <h5 class="card-title">Brincos</h5>
+                <p class="card-text">"Brinco saiu de moda" ou "Brinco não vale a pena", quem disse isso com certeza não
+                  gosta de você! Ela está te privando te ser a pessoa mais linda da festa! Aproveite nosso brincos e
+                  deixe
+                  seu rosto mais lindo!</p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="row mt-4">
+        <h1 style="font-family: 'perpetua';text-align: center;">Compre na Aurum Joias</h1>
+        <h2 style="color:#666;font-family: 'Playfair Display', serif;line-height: 1.8">Se você deseja brilhar em
+          qualquer ocasião ou presentear com elegância incomparável, explore nossa coleção
+          de colares, anéis, brincos e pulseiras em prata e ouro. Cada peça é uma manifestação de beleza atemporal,
+          habilmente trabalhada para capturar a essência da sofisticação e do estilo. Dos designs clássicos aos mais
+          contemporâneos, nosso catálogo oferece uma variedade exuberante, garantindo que você encontre a peça perfeita
+          para cada momento especial. Nossa missão vai além de simplesmente oferecer acessórios; buscamos proporcionar
+          uma experiência excepcional, onde cada detalhe é pensado com carinho, desde a embalagem até a entrega. Ao
+          escolher um item de nossa loja, você não está apenas adquirindo uma joia, mas sim um tesouro que será
+          apreciado por gerações. Deixe-nos ajudá-lo a tornar cada ocasião verdadeiramente memorável, onde o brilho do
+          ouro e a delicadeza da prata iluminarão seu caminho com uma beleza eterna.</h2>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <img src="/PICTURES/sem_imagem.webp" class="card-img" alt="...">
+        </div>
+        <div class="col-md-6">
+          <br>
+          <h2>Quer saber mais sobre nós?</h2>
+          <p>Descobrir nossa joalheria é abrir as portas para um universo de encanto e elegância. Aqui, cada visita é
+            uma jornada em direção à descoberta de tesouros únicos, onde a beleza é elevada a um novo patamar. Ao
+            adentrar nossas portas, você não apenas se depara com uma vasta coleção de joias, mas sim com uma
+            experiência enriquecedora e gratificante. Nossa paixão pela arte da joalheria transparece em cada detalhe
+            cuidadosamente trabalhado, onde o ouro reluzente e a prata delicada se unem para criar verdadeiras obras de
+            arte. Convidamos você a explorar nosso universo de brilho e glamour, onde cada peça é uma celebração da sua
+            individualidade e estilo pessoal. Na nossa loja, você não apenas adquire uma joia, mas sim um símbolo de
+            elegância e sofisticação que ecoará através dos tempos. Junte-se a nós nesta jornada e descubra o prazer de
+            conhecer a verdadeira essência da joalheria.</p>
+          <a class="btn btn-success" href="/HTML/Sobre.html">Clique aqui</a>
+          <br>
+        </div>
+      </div>
+    </div>
 
   </main>
 
