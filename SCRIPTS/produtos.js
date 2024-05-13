@@ -32,7 +32,7 @@ function verificarUsuarioLogado() {
             <a href="detalhes.html?id=${produtoID}">
               <div class="col-md-4 card">
                 <div class="row">
-                  ${element.Imagem}
+                  <img src="${element.Imagem.Img1}" alt="${element.Categoria}">
                 <\div>
                 <div class="row">
                   <h6><b>${element.Nome}<\b><\h6>
