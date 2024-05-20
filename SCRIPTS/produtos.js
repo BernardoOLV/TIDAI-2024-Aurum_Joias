@@ -21,29 +21,31 @@ function verificarUsuarioLogado() {
     } else {
       console.log("Nenhuma categoria encontrada na URL.");
     }
+    
+    
 
- 
     conteudo += `<div class="container">`;
     //Mostrar produtos que tiverem a catégoria
-    data.Produtos.forEach(element => {
-        if(element.Categoria == parametro){
-          let produtoID = Object.keys(data.Produtos).find(key => data.Produtos[key].Nome === element.Nome);
+    for (let produtoID in data.Produtos) {
+      let element = data.Produtos[produtoID];
+      if (element.Categoria === parametro) {
           conteudo += `
-            <a href="detalhes.html?id=${produtoID}">
-              <div class="col-md-4 card">
-                <div class="row">
-                  <img src="${element.Imagem.Img1}" alt="${element.Categoria}">
-                <\div>
-                <div class="row">
-                  <h6><b>${element.Nome}<\b><\h6>
-                  <br>
-                  <h4 class="text-success">${element.Preco}<\h4>
-                <\div>
-              <\div>
-            <\a>
-          `
-        }
-    });
+              <a href="detalhes.html?id=${produtoID}" style="text-decoration:none;">
+                  <div class="col-md-4 p-2 card m-2 shadow-lg">
+                      <div class="row">
+                          <img src="${element.Imagem.Img1}" alt="${element.Categoria}">
+                      </div>
+                      <div class="row p-2">
+                          <h5><b>${element.Nome}</b></h5>
+                          <br>
+                          <h4 class="text-success text-end">R$${element.Preco}</h4>
+                      </div>
+                  </div>
+              </a>
+          `;
+      }
+  }
+  
 
     conteudo += `<\div>`;
     principal.innerHTML = conteudo;
