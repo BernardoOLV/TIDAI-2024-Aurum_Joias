@@ -4,7 +4,8 @@ function verificarUsuarioLogado() {
     if (usuarioLogado) {
         console.log(localStorage.getItem('email'));
     } else {
-        window.location.href = 'homepage.html';
+        alert("Precisa estar logado. Você será redirecionado para tela de login.")
+        window.location.href = 'login.html';
     }
 }
 
