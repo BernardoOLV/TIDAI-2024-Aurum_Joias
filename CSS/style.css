@@ -5,9 +5,19 @@ html, body{
     padding: 0;
 }
 
+#home_filtro .card-img-overlay{
+    color:black;
+}
+
 #home_filtro:hover{
     transform: scale(1.007);
     box-shadow: 0px 4px 10px purple;
+}
+
+#Home_SobreNos{
+    color: white;
+    border-radius: 2.5%;
+    box-shadow: 0px 4px 12px purple;
 }
 
 .carousel-item img{
