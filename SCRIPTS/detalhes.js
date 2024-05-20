@@ -21,7 +21,7 @@ function Mostrar(data) {
     console.log("Nenhum ID encontrado na URL.");
   }
   produto = data.Produtos[parametroId];
-
+  console.log(produto.Imagem.Img1)
   principal.innerHTML = `
     <div class="container p-4">
     <div class="row p-2">
@@ -29,16 +29,13 @@ function Mostrar(data) {
         <div id="carousel" class="carousel slide">
           <div class="carousel-inner rounded">
             <div class="ratio ratio-16x9 carousel-item active">
-              <iframe src="https://www.youtube.com/embed/sfHIYITAL60" title="YouTube video" allowfullscreen></iframe>
+              <img src="${produto.Imagem.Img1}" class="d-block w-100" style="width:100%;height:100%;object-fit:cover">
             </div>
             <div class="ratio ratio-16x9 carousel-item">
-              <iframe src="https://www.youtube.com/embed/LavdQQduH8A" title="YouTube video" allowfullscreen></iframe>
+              <img src="${produto.Imagem.Img2}" class="d-block w-100" style="width:100%;height:100%;object-fit:cover">
             </div>
             <div class="ratio ratio-16x9 carousel-item">
-              <iframe src="https://www.youtube.com/embed/Z6g5orxJ_Rk" title="YouTube video" allowfullscreen></iframe>
-            </div>
-            <div class="ratio ratio-16x9 carousel-item">
-              <iframe src="https://www.youtube.com/embed/skQq-FoD7D8" title="YouTube video" allowfullscreen></iframe>
+              <img src="${produto.Imagem.Img3}" class="d-block w-100" style="width:100%;height:100%;object-fit:cover">
             </div>
           </div>
           <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
