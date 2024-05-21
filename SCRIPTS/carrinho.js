@@ -163,6 +163,8 @@ function Pagar() {
                         throw new Error('Erro ao limpar o carrinho do Firebase.');
                     }
                     console.log('Carrinho limpo com sucesso.');
+
+                    /*
                     //Envia o Email de confirmação para o cliente
                     const corpoEmail = `Olá ${data.userID.Nome}! Parabéns sua compra foi realizada com sucesso!\n`;
                     const emailData = {
@@ -171,6 +173,7 @@ function Pagar() {
                         body: corpoEmail
                     };
                     EnviarEmail(emailData);
+                    */
 
                     // Atualiza a página após a limpeza bem-sucedida
                     location.reload();
@@ -185,6 +188,7 @@ function Pagar() {
 
 }
 
+/*
 //Envia email de confirmação para o cliente
 function EnviarEmail(emailData){
     // Configurações de acesso ao Gmail
@@ -218,7 +222,7 @@ function EnviarEmail(emailData){
         }
     });
 }
-
+*/
 
 function verificarUsuario(data) {
     const email = localStorage.getItem('email');
