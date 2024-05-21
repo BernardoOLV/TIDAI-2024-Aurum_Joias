@@ -29,13 +29,13 @@ function Mostrar(data) {
         <div id="carousel" class="carousel slide">
           <div class="carousel-inner rounded">
             <div class="ratio ratio-16x9 carousel-item active">
-              <img src="${produto.Imagem.Img1}" class="d-block w-100" style="width:100%;height:100%;object-fit:cover">
+              <img src="${produto.Imagem.Img1}" class="d-block w-100" style="max-width:100%;max-height:100%;margin:auto;object-fit: contain;">
             </div>
             <div class="ratio ratio-16x9 carousel-item">
-              <img src="${produto.Imagem.Img2}" class="d-block w-100" style="width:100%;height:100%;object-fit:cover">
+              <img src="${produto.Imagem.Img2}" class="d-block w-100" style="max-width:100%;max-height:100%;margin:auto;object-fit: contain;">
             </div>
             <div class="ratio ratio-16x9 carousel-item">
-              <img src="${produto.Imagem.Img3}" class="d-block w-100" style="width:100%;height:100%;object-fit:cover">
+              <img src="${produto.Imagem.Img3}" class="d-block w-100" style="max-width:100%;max-height:100%;margin:auto;object-fit: contain;">
             </div>
           </div>
           <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
