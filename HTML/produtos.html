@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="/CSS/style.css">
 </head>
 
-<body>
+<body class="d-flex flex-column">
   <header>
     <nav class="bg-body-tertiary">
       <div class="container-fluid">
@@ -62,24 +62,11 @@
         <div class="offcanvas offcanvas-start" tabindex="-1" id="lateral" aria-labelledby="offcanvasNavbarLabel">
           <div class="offcanvas-header">
             <h5 class="offcanvas-title" id="offcanvasNavbarLabel">AURUM JOIAS</h5>
-            <a class="nav-link ps-3" href="login.html">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                class="bi bi-person-fill" viewBox="0 0 16 16">
-                <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
-              </svg>
-            </a>
-            <a class="nav-link ps-3" href="carrinho.html">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-cart"
-                viewBox="0 0 16 16">
-                <path
-                  d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
-              </svg>
-            </a>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
           </div>
           <div class="offcanvas-body">
-            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-              <li class="nav-item">
+            <ul class="navbar-nav flex-grow-1 pe-3">
+              <li class="nav-item btn btn-outline-warning m-2">
                 <a class="nav-link mx-auto" href="homepage.html">Home
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house"
                     viewBox="0 0 16 16">
@@ -88,19 +75,55 @@
                   </svg>
                 </a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/HTML/produtos.html?category=colares">Colares</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/HTML/produtos.html?category=pulseiras">Pulseiras</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/HTML/produtos.html?category=aneis">Anéis</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/HTML/produtos.html?category=brincos">Brincos</a>
+              <li class="nav-item btn btn-outline-warning m-2">
+                <a class="nav-link" href="/HTML/Sobre.html">Sobre Nós</a>
               </li>
             </ul>
+            <div class="row justify-content-center p-2">
+              <br>
+              <h5>PRODUTOS</h5>
+              <div class="col-md-6 p-2">
+                <a href="/HTML/produtos.html?category=colares">
+                  <div class="card text-bg-dark" id="home_filtro">
+                    <img src="/PICTURES/Filtro_Colar.webp" class="card-img" alt="...">
+                    <div class="card-img-overlay">
+                      <h5 class="card-title">Colares</h5>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div class="col-md-6 p-2">
+                <a href="/HTML/produtos.html?category=aneis">
+                  <div class="card text-bg-dark" id="home_filtro">
+                    <img src="/PICTURES/Filtro_Anel.png" class="card-img" alt="...">
+                    <div class="card-img-overlay">
+                      <h5 class="card-title">Anéis</h5>
+                    </div>
+                  </div>
+                </a>
+              </div>
+      
+              <div class="col-md-6 p-2">
+                <a href="/HTML/produtos.html?category=pulseiras">
+                  <div class="card text-bg-dark" id="home_filtro">
+                    <img src="/PICTURES/Filtro_Pulseira.webp" class="card-img" alt="...">
+                    <div class="card-img-overlay">
+                      <h5 class="card-title">Pulseiras</h5>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div class="col-md-6 p-2">
+                <a href="/HTML/produtos.html?category=brincos">
+                  <div class="card text-bg-dark" id="home_filtro">
+                    <img src="/PICTURES/Filtro_Brinco.jpg" class="card-img" alt="...">
+                    <div class="card-img-overlay">
+                      <h5 class="card-title">Brincos</h5>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -108,7 +131,7 @@
     </nav>
   </header>
 
-  <main>
+  <main class="flex-grow-1">
     <div class="container p-4">
       <div class="row justify-content-center">
         <div class="col-md-2">
