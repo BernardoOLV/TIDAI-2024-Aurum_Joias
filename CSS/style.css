@@ -1,20 +1,21 @@
-html, body{
+html,
+body {
     height: 100vh;
     width: 100vw;
     margin: 0;
     padding: 0;
 }
 
-#home_filtro .card-img-overlay{
-    color:black;
+#home_filtro .card-img-overlay {
+    color: black;
 }
 
-#home_filtro:hover{
+#home_filtro:hover {
     transform: scale(1.007);
     box-shadow: 0px 4px 10px gold;
 }
 
-#Home_SobreNos{
+#Home_SobreNos {
     color: white;
     box-shadow: 0px 4px 12px gold;
 }
@@ -24,7 +25,12 @@ a {
     color: white;
 }
 
-.carousel-item img{
+.carousel-item img {
     height: 500px;
 }
 
+@media screen and (max-width: 1232px) {
+    body{
+        min-height: 800px;
+    }
+}
