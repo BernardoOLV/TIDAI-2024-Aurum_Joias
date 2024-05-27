@@ -1,6 +1,5 @@
 // Função para enviar os dados para a API
 function EnviarDados(payload) {
-  
     fetch('https://aurum-joias-default-rtdb.firebaseio.com/Usuarios/.json', {
             method: 'POST',
             headers: {
@@ -13,6 +12,7 @@ function EnviarDados(payload) {
                 console.log('POST bem-sucedido!');
                 console.log('Resposta da API:', response);
                 alert('Cadastro Bem sucedido');
+                window.location.href = 'login.html';
             } else {
                 console.error('Erro:', response.status);
                 alert("Erro ao cadastrar, tente novamente!");
@@ -28,7 +28,7 @@ function EnviarDados(payload) {
 document.addEventListener('DOMContentLoaded', function() {
     var btnCadastrar = document.getElementById('btnCadastrar');
     btnCadastrar.addEventListener('click', function(event) {
-        
+        event.preventDefault();
         // Pega os valores
         var nome = document.getElementById('nome').value;
         var celular = document.getElementById('celular').value;
@@ -50,8 +50,12 @@ document.addEventListener('DOMContentLoaded', function() {
         };
         console.log(payload);
 
-        if(nome.length>=2 && senha.length >= 5 && celular.length >= 10 && endereco >= 10 && email.length >= 3 && termos.checked){
+        if(nome.length>=2 && senha.length >= 5 && celular.length >= 10 && endereco.length >= 10 && email.length >= 3 && termos.checked){
+            console.log("Verficando email...")
             Verificar(payload);
+        }
+        else{
+            console.log(endereco.length);
         }
     });
 });
@@ -71,6 +75,7 @@ function Verificar(payload) {
                 Alert("O email já está em uso. Por favor, escolha outro.");
             } else {
                 // Se o email não existe, envia os dados
+                console.log("Enviando dados...");
                 EnviarDados(payload);
             }
         })

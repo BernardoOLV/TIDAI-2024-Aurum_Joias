@@ -164,16 +164,8 @@ function Pagar() {
                     }
                     console.log('Carrinho limpo com sucesso.');
 
-                    /*
-                    //Envia o Email de confirmação para o cliente
-                    const corpoEmail = `Olá ${data.userID.Nome}! Parabéns sua compra foi realizada com sucesso!\n`;
-                    const emailData = {
-                        to: data.userID.Email,
-                        subject: 'Nova compra na Aurum Joias',
-                        body: corpoEmail
-                    };
-                    EnviarEmail(emailData);
-                    */
+                    // Exibir mensagem de compra realizada com sucesso
+                    alert("Compra Realizada com sucesso");
 
                     // Atualiza a página após a limpeza bem-sucedida
                     location.reload();
@@ -187,42 +179,6 @@ function Pagar() {
         });
 
 }
-
-/*
-//Envia email de confirmação para o cliente
-function EnviarEmail(emailData){
-    // Configurações de acesso ao Gmail
-    const gmailConfig = {
-        host: 'smtp.gmail.com',
-        port: 587,
-        secure: false,
-        auth: {
-            user: 'aurumjoiaspuc@gmail.com', // Email do Gmail
-            pass: 'PucJoias3@' // Senha do Gmail
-        }
-    };
-
-    // Configuração do email
-    const transporter = nodemailer.createTransport(gmailConfig);
-
-    // Definição do email
-    const emailOptions = {
-        from: 'aurumjoiaspuc@gmail.com', // Email do Gmail
-        to: emailData.to,
-        subject: emailData.subject,
-        text: emailData.body
-    };
-
-    // Enviar o email
-    transporter.sendMail(emailOptions, function (error, info) {
-        if (error) {
-            console.error('Erro ao enviar o email:', error);
-        } else {
-            console.log('Email enviado com sucesso:', info.response);
-        }
-    });
-}
-*/
 
 function verificarUsuario(data) {
     const email = localStorage.getItem('email');
