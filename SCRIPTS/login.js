@@ -1,3 +1,11 @@
+function verificarUsuarioLogado() {
+    const usuarioLogado = localStorage.getItem('usuarioLogado');
+    if (usuarioLogado) {
+        console.log(localStorage.getItem('email'));
+        window.location.href = 'perfil.html';
+    }
+}
+
 // Função para realizar o login
 function fazerLogin(email, senha) {
     // Fazer a autenticação com o servidor
@@ -60,4 +68,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+window.onload = function() {
+    verificarUsuarioLogado();
+};
 
