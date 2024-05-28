@@ -139,7 +139,7 @@ function adicionarCarrinho(produtoID) {
         })
         .then(data => {
           console.log('Produto adicionado ao carrinho:', data);
-          window.location.href = 'carrinho.html';
+          window.location.href = 'produtos.html?category=todos';
         })
         .catch(error => {
           console.error('Erro ao adicionar produto ao carrinho:', error);
