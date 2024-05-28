@@ -46,37 +46,38 @@ function Mostrar(data) {
             if (user.Carrinho.hasOwnProperty(key)) {
                 const item = user.Carrinho[key];
                 conteudo += `
-                    <div class="row border">
-                        <div class="col-8 p-2">
-                            <h4><b>${item.Nome}</b></h4>
-                        </div>
-                        <div class="col-3 p-2">
-                            <h4><b class="text-warning text-end">R$ ${item.Preco}</b></h4>
-                        </div>
-                        <div class="col-1 p-2">
-                            <buttom class="btn btn-danger" type="buttom" onclick="removerCarrinho('${item.Nome}')">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
-                                    <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5M8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5m3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0"/>
-                                </svg>
-                            </buttom>
-                        </div>
-                    </div>`;
+                <div class="row border rounded m-1">
+                    <div class="col-9 p-2">
+                        <h4 class="mb-0">${item.Nome}</h4>
+                    </div>
+                    <div class="col-2 p-2 bg-warning text-center">
+                        <h4 class="mb-0 text-light">R$ ${item.Preco}</h4>
+                    </div>
+                    <div class="col-1 p-2 bg-danger text-center rounded-right">
+                        <button class="btn btn-danger" type="button" onclick="removerCarrinho('${item.Nome}')">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                                <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5M8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5m3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                `;
                 total += item.Preco;
             }
         }
 
         conteudo += `
-        <div class="row border mt-2">             
+        <div class="row border mt-2">
             <div class="col-10 p-2">
                 <h3 class="text-start">Total a Pagar: <b class="text-success">R$ ${total}</b></h3>
             </div>
             <div class="col-2 d-flex justify-content-end p-2">
-                <buttom class="btn btn-success" onclick="Pagar()">
+                <button class="btn btn-success" onclick="Pagar()">
                     <b>Pagar </b>
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-patch-check-fill" viewBox="0 0 16 16">
                         <path d="M10.067.87a2.89 2.89 0 0 0-4.134 0l-.622.638-.89-.011a2.89 2.89 0 0 0-2.924 2.924l.01.89-.636.622a2.89 2.89 0 0 0 0 4.134l.637.622-.011.89a2.89 2.89 0 0 0 2.924 2.924l.89-.01.622.636a2.89 2.89 0 0 0 4.134 0l.622-.637.89.011a2.89 2.89 0 0 0 2.924-2.924l-.01-.89.636-.622a2.89 2.89 0 0 0 0-4.134l-.637-.622.011-.89a2.89 2.89 0 0 0-2.924-2.924l-.89.01zm.287 5.984-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7 8.793l2.646-2.647a.5.5 0 0 1 .708.708"/>
                     </svg>
-                </buttom>
+                </button>
             </div>
         </div>
         </div>`;
