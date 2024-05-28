@@ -47,10 +47,10 @@ function Mostrar(data) {
                 const item = user.Carrinho[key];
                 conteudo += `
                 <div class="row border rounded m-1">
-                    <div class="col-9 p-2">
+                    <div class="col-9 p-2 text-secondary">
                         <h4 class="mb-0">${item.Nome}</h4>
                     </div>
-                    <div class="col-2 p-2 bg-warning text-center">
+                    <div class="col-2 p-2 bg-success text-center">
                         <h4 class="mb-0 text-light">R$ ${item.Preco}</h4>
                     </div>
                     <div class="col-1 p-2 bg-danger text-center rounded-right">
@@ -67,13 +67,13 @@ function Mostrar(data) {
         }
 
         conteudo += `
-        <div class="row border mt-2">
+        <div class="row border mt-2 rounded">
             <div class="col-10 p-2">
                 <h3 class="text-start">Total a Pagar: <b class="text-success">R$ ${total}</b></h3>
             </div>
             <div class="col-2 d-flex justify-content-end p-2">
-                <button class="btn btn-success" onclick="Pagar()">
-                    <b>Pagar </b>
+                <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalConfirmacaoCompra">
+                    <b>Comprar </b>
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-patch-check-fill" viewBox="0 0 16 16">
                         <path d="M10.067.87a2.89 2.89 0 0 0-4.134 0l-.622.638-.89-.011a2.89 2.89 0 0 0-2.924 2.924l.01.89-.636.622a2.89 2.89 0 0 0 0 4.134l.637.622-.011.89a2.89 2.89 0 0 0 2.924 2.924l.89-.01.622.636a2.89 2.89 0 0 0 4.134 0l.622-.637.89.011a2.89 2.89 0 0 0 2.924-2.924l-.01-.89.636-.622a2.89 2.89 0 0 0 0-4.134l-.637-.622.011-.89a2.89 2.89 0 0 0-2.924-2.924l-.89.01zm.287 5.984-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7 8.793l2.646-2.647a.5.5 0 0 1 .708.708"/>
                     </svg>
@@ -81,6 +81,37 @@ function Mostrar(data) {
             </div>
         </div>
         </div>`;
+
+        //adiciona o modal
+        conteudo += `
+        <div class="modal fade" id="modalConfirmacaoCompra" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Confirmação de Compra</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <h5>Itens do Carrinho:</h5>
+                        <ul class="list-group">
+                            ${Object.values(user.Carrinho).map(item => `
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <span>${item.Nome}</span>
+                                    <span class="fw-bold">R$ ${item.Preco.toFixed(2)}</span>
+                                </li>
+                            `).join('')}
+                        </ul>
+                        <hr>
+                        <h5>Total a Pagar: <span class="text-success fw-bold">R$ ${total.toFixed(2)}</span></h5>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-success" onclick="Pagar()">Finalizar compra</button>
+                    </div>
+                </div>
+            </div>
+        </div>`;
+
 
         principal.innerHTML = conteudo;
     }
