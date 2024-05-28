@@ -41,7 +41,7 @@ function Mostrar(data) {
             <div class="row p-2 flex-grow-1">
               <h5><b>${element.Nome}</b></h5>
               <br>
-              <h4 class="text-success text-end">R$${element.Preco}</h4>
+              <h4 class="text-success text-end">R$${element.Preco.toFixed(2)}</h4>
             </div>
           </div>
         </a>

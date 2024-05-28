@@ -51,7 +51,7 @@ function Mostrar(data) {
                         <h4 class="mb-0">${item.Nome}</h4>
                     </div>
                     <div class="col-2 p-2 bg-success text-center">
-                        <h4 class="mb-0 text-light">R$ ${item.Preco}</h4>
+                        <h4 class="mb-0 text-light">R$ ${item.Preco.toFixed(2)}</h4>
                     </div>
                     <div class="col-1 p-2 bg-danger text-center rounded-right">
                         <button class="btn btn-danger" type="button" onclick="removerCarrinho('${item.Nome}')">
