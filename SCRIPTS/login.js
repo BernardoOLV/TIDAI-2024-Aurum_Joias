@@ -26,7 +26,11 @@ function fazerLogin(email, senha) {
                 localStorage.setItem('usuarioLogado', true);
                 localStorage.setItem('email', email);
                 // Redirecionar o usuário para a página principal
-                window.location.href = 'homepage.html';
+                if(document.referrer.endsWith("login.html")||document.referrer.endsWith("cadastro.html")){
+                    window.location.href = 'homepage.html';
+                }else{
+                    window.history.back();
+                }
             } else {
                 // Credenciais inválidas
                 console.error('Credenciais inválidas.');
